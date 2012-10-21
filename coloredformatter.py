@@ -61,7 +61,7 @@ class ColoredFormatter(logging.Formatter):
   # A variant of code found at http://stackoverflow.com/questions/384076/how-can-i-make-the-python-logging-output-to-be-colored
   LEVELCOLOR = {
     'DEBUG': 'BLUE',
-    'INFO': 'BLACK',
+    'INFO': 'GREEN',
     'WARNING': 'PURPLE',
     'ERROR': 'RED',
     'CRITICAL': 'RED_BG',
