@@ -1,3 +1,10 @@
+## 
+##  coloredformatter.py
+## 
+##   Created on: Oct 21, 2012
+##       Author: martinez
+##
+
 import copy
 import logging
 
