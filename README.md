@@ -1,0 +1,4 @@
+pymm
+====
+
+Python MassMailer
