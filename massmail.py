@@ -85,7 +85,6 @@ class MassMail:
                      'attachments: {}'.format(mail_dest,fmtstrs,attachments))
 
         if(len(fmtstrs) != numfmtstrs):
-          logger.error('format error?')
           raise IndexError
 
         fmtmessage = message.format(*fmtstrs)
@@ -103,14 +102,3 @@ class MassMail:
         continue
 
       logger.info('Mail to {} successfully send.'.format(mail_dest))
-            
-    #         print(line)
-            
-    #         try:
-    #             send_mail(SENDER, mail_dest, SUBJECT, MESSAGE,
-    #                       attachments, server=MAILHOST, user=USER, note=NOTE)
-    #         except Exception as e:
-    #             print(e)
-    #             print('Warning: Could not send email to', mail_dest)
-                
-    #         print('Mail to', mail_dest, 'successfully send with attachments', str(attachments))    

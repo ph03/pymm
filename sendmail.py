@@ -23,7 +23,7 @@ g_user = None
 
 def send_mail(send_from, send_to, subject, text, files=[], server='localhost',
               user=None, password=None, port=25, note=''):
-  assert type(files)==list
+  assert type(files) == list
 
   logger.debug('sending to {}'.format(send_to))
 
@@ -43,7 +43,7 @@ def send_mail(send_from, send_to, subject, text, files=[], server='localhost',
     part.set_payload( open(f,"rb").read() )
     encoders.encode_base64(part)
     part.add_header('Content-Disposition', 'attachment; filename="%s"' %
-                    os.path.basename(f))
+                     os.path.basename(f))
     msg.attach(part)
 
   global g_pw, g_user

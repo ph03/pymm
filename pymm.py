@@ -16,7 +16,6 @@ import optparse
 import logging
 from coloredformatter import ColoredFormatter
 
-# (colored) logging
 logger = logging.getLogger('pymm')
 
 from massmail import MassMail
