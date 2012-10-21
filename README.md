@@ -24,11 +24,12 @@ Usage
       
 Workflow
 --------
--Create *configfile* by
+- Create *configfile* by
+                    
+          $ ./pymm.py -i configfile
+    
+- Edit *configfile*
 
-    $ ./pymm.py -i configfile
--Edit *configfile*
-
--Execute *configfile* by
-
-    $ ./pymm.py configfile
+- Execute *configfile* by
+                     
+        $ ./pymm.py configfile
