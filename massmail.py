@@ -98,7 +98,7 @@ class MassMail:
         logger.warning('Skipping wrongly formated data {}: {}\n{}'.format(data,fmtstrs,e))
         continue
       except Exception as e:
-        logger.warning('Error sending {}'.format(data))
+        logger.warning('Error sending {}: {}'.format(data,e))
         continue
 
       logger.info('Mail to {} successfully send.'.format(mail_dest))
