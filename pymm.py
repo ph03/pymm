@@ -7,7 +7,7 @@
 ##       Author: martinez
 ##
 
-VERSION = 'pymm 0.1'
+VERSION = 'pymm 0.1.1'
 
 import sys
 
