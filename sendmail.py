@@ -14,6 +14,7 @@ from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
 from email.utils import formatdate
 from email import encoders
+from email.header import Header
 
 import logging
 logger = logging.getLogger('pymm')
@@ -31,13 +32,13 @@ def send_mail(send_from, send_to, subject, text, files=[], server='localhost',
   msg['From']    = send_from
   msg['To']      = send_to
   msg['Date']    = formatdate(localtime=True)
-  msg['Subject'] = subject
+  msg['Subject'] = Header(subject, 'utf-8')
+
+  msg.attach(MIMEText(text, 'plain', 'utf-8'))
 
   if(note):
-    msg.attach( MIMEText(text + '\n\n' + note) )
-  else:
-    msg.attach( MIMEText(text) )  
-  
+    msg.attach(MIMEText(note, 'plain', 'utf-8'))
+
   for f in files:
     part = MIMEBase('application', "octet-stream")
     part.set_payload( open(f,"rb").read() )
