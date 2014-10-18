@@ -1,6 +1,6 @@
-## 
+##
 ##  sendmail.py
-## 
+##
 ##   Created on: Oct 21, 2012
 ##       Author: martinez
 ##
@@ -60,8 +60,9 @@ def send_mail(send_from, send_to, subject, text, files=[], server='localhost',
 
   if g_pw == None:
     g_pw = getpass.getpass('SMTP password for {}@{}:'.format(g_user,server))
-      
+
   smtp = smtplib.SMTP(server, port)
+  smtp.ehlo_or_helo_if_needed()
   smtp.starttls()
   smtp.login(g_user, g_pw)
   smtp.sendmail(send_from, send_to, msg.as_string())
